@@ -1,3 +1,3 @@
 Ideas & Solutions website
 ===============
-a tech group from Vietnam.
+Designed by NNBPhien
