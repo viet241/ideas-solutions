@@ -21,6 +21,7 @@ $bp-large: 1170px;
 $trim-sm: 1rem;
 $trim: 2rem;
 $trim-2x: 4rem;
+$bootstrap-trim: 15px;
 
 // Fonts
 $f-general: 'Open Sans', arial, sans-serif;
@@ -42,15 +43,13 @@ $ani-duration : .4s;
 	10%, 100% { @include transform(rotate(360deg)); }
 }
 
-@mixin selection($bg-color, $text-color) {
-    ::-moz-selection { 
-		background: $bg-color;
-		color: $text-color;
-    }
-    ::selection { 
-    	background: $bg-color;
-		color: $text-color;
-    }
+@mixin selection($bg, $color) {
+	@each $prefix in ("-moz-", "") {
+		:#{$prefix}selection {
+			color: $color;
+			background: $bg;
+		}
+	}
 }
 
 /// END variables / Mixins
@@ -63,11 +62,11 @@ $ani-duration : .4s;
 
 // BEGIN STYLES 
 
+@include selection($c-main, $c-white);
+
 html {
 	font-size: $fz-base;
 }
-
-@include selection($c-main, $c-white);
 
 body {
 	background: #fff;
@@ -226,6 +225,7 @@ a {
 	position: relative;
 	display: none;
 	line-height: 2.2rem;
+	margin: 0 -$bootstrap-trim;
 
 	& > ul{
 		list-style-type: none;
@@ -237,7 +237,7 @@ a {
 
 			a {
 				display: block;
-				padding: 4px 0;
+				padding: 4px $bootstrap-trim;
 				font-size: $fz-l;
 				text-align: right;
 				text-transform: lowercase;
@@ -251,7 +251,7 @@ a {
 		clear: none;
 		float: right;
 		line-height: 1;
-		margin-top: 1.25rem;
+		margin: 1.25rem 0 0;
 
 		& > ul li {
 			float: left;
@@ -380,7 +380,6 @@ $box-width: 40%;
 
 	h1 {
 		font-size: 2.75rem;
-		font-weight: 400;
 	}
 
 	p {font-size: 1.5rem}
@@ -391,6 +390,10 @@ $box-width: 40%;
 
 	@include bp(min, $bp-medium) {
 		h1 {font-size: 3.75rem;}
+	}
+
+	.center{
+		z-index: 2;
 	}
 
 }
