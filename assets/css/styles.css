@@ -44,6 +44,16 @@ html {
   font-size: 16px;
 }
 
+::-moz-selection {
+  background: #03a9f4;
+  color: #fff;
+}
+
+::selection {
+  background: #03a9f4;
+  color: #fff;
+}
+
 body {
   background: #fff;
   font-family: "Open Sans", arial, sans-serif;
@@ -372,8 +382,9 @@ a:hover, a:focus {
 #bg-video {
   background: none;
   width: 100%;
+  height: auto;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 @media screen and (orientation: portrait) {
   #bg-video {
@@ -480,7 +491,7 @@ a:hover, a:focus {
   text-align: center;
   margin-top: 3rem;
 }
-.contact-info .tip:hover i:before {
+.contact-info .tip.show-tip i:before, .contact-info .tip:hover i:before {
   -moz-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
@@ -538,7 +549,12 @@ a:hover, a:focus {
 }
 
 .social-links {
-  margin-top: 3rem;
+  margin-top: 6rem;
+}
+@media screen and (min-width: 768px) {
+  .social-links {
+    margin-top: 3rem;
+  }
 }
 .social-links a {
   position: relative;

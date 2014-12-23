@@ -42,6 +42,7 @@ $(function(){
 		'id': 'bg-video',
 		'class': 'overlay'
 	});
+	
 	Modernizr.touch && $(".tip").on('click', function(){
 		$(this).toggleClass('show-tip');
 		return !1;
