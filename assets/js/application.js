@@ -5,6 +5,20 @@ $(function(){
 		scrollTo : function(speed, easing, callback) {
 			var anchor = $(this).length ? $(this).offset().top : 0;
 			$('html,body').stop().animate({'scrollTop': anchor}, speed || 0, easing, callback);
+		},
+		videoRender: function (attrs){
+			var def = {
+				'loop': true,
+				'autoplay': true,
+				'controls': false,
+				'preload': true
+			};
+
+			$(this).prepend(
+				$('<video/>', $.extend(def, attrs))
+					.append($('<source/>', {'src': $(this).data("video")})
+				)
+			);
 		}
 	});
 
@@ -12,11 +26,27 @@ $(function(){
 	// variables
 	var $win = $(window), 
 		$scrollTop = 0,
-		$scrollDuration = 600;
+		$scrollDuration = 600,
+		bp = {
+			'xsmall': 480,
+			'small': 768,
+			'medium': 970,
+			'large': 1170
+		};
 
 	$(".svg-inject").svgInject();
 
 	$(".box.show").removeClass("show");
+
+	(!Modernizr.touch || Modernizr.mq("(min-width: "+bp.small+"px)")) && $("#intro").videoRender({
+		'id': 'bg-video',
+		'class': 'overlay'
+	});
+	Modernizr.touch && $(".tip").on('click', function(){
+		$(this).toggleClass('show-tip');
+		return !1;
+	});
+
 	
 	$(document).on('click', "#menu-toggle", function(e) { // menu toggle
 		e.preventDefault();

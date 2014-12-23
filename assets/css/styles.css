@@ -6,6 +6,40 @@
   height: 100%;
 }
 
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10%, 100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10%, 100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  10%, 100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 html {
   font-size: 16px;
 }
@@ -57,6 +91,7 @@ a:hover, a:focus {
 .overlay, .pj-items article a {
   background: rgba(3, 169, 244, 0.5);
   display: block;
+  z-index: 1;
 }
 
 .center {
@@ -143,6 +178,9 @@ a:hover, a:focus {
   height: 2.6rem;
   width: 2.6rem;
   vertical-align: text-bottom;
+  -moz-animation: spin 5s infinite;
+  -webkit-animation: spin 5s infinite;
+  animation: spin 5s infinite;
 }
 .fixed #logo #circle {
   opacity: 1;
@@ -247,6 +285,16 @@ a:hover, a:focus {
   width: 80%;
   left: -80%;
 }
+@media screen and (orientation: portrait) {
+  .screen .box {
+    position: static !important;
+    margin: 4rem auto;
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
 .screen .box.right {
   left: auto;
   right: -80%;
@@ -300,6 +348,9 @@ a:hover, a:focus {
   border-color: #fff;
 }
 
+#intro {
+  background-image: url(../images/intro.png);
+}
 #intro h1 {
   font-size: 2.75rem;
   font-weight: 400;
@@ -322,6 +373,7 @@ a:hover, a:focus {
   background: none;
   width: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 @media screen and (orientation: portrait) {
   #bg-video {
@@ -461,7 +513,7 @@ a:hover, a:focus {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
-.contact-info .tip.show .tip-info, .contact-info .tip:hover .tip-info {
+.contact-info .tip.show-tip .tip-info, .contact-info .tip:hover .tip-info {
   visibility: visible;
   opacity: 1;
   top: 100%;
@@ -510,14 +562,15 @@ a:hover, a:focus {
   position: relative;
 }
 .social-links .line:before {
+  display: block;
   content: '';
   position: absolute;
   width: 12rem;
   left: 50%;
   margin-left: -6rem;
-  top: 0;
-  margin-top: -1px;
-  border-top: 1px solid #fff;
+  top: -2px;
+  background: #fff;
+  height: 4px;
 }
 
 .contact-form {
@@ -528,6 +581,9 @@ a:hover, a:focus {
 .contact-form .container {
   width: 700px;
   max-width: 100%;
+}
+.contact-form h3 {
+  text-align: center;
 }
 .contact-form input, .contact-form textarea {
   background: none;

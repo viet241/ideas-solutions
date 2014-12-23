@@ -20,6 +20,7 @@ $bp-large: 1170px;
 // Spacing
 $trim-sm: 1rem;
 $trim: 2rem;
+$trim-2x: 4rem;
 
 // Fonts
 $f-general: 'Open Sans', arial, sans-serif;
@@ -36,10 +37,10 @@ $fz-title-sm: 1.875rem;
 //animation
 $ani-duration : .4s;
 
-// @include keyframes(spin) { // spin
-// 	0% { @include transform(rotate(0deg)); }
-// 	100% { @include transform(rotate(360deg)); }
-// }
+@include keyframes(spin) { // spin
+	0% { @include transform(rotate(0deg)); }
+	10%, 100% { @include transform(rotate(360deg)); }
+}
 
 // @include keyframes(blink) { // blink
 // 	0% { transform: scaleX(1) scaleY(1); }
@@ -106,6 +107,7 @@ a {
 	@extend %coverer;
 	background: $c-overlay;
 	display: block;
+	z-index: 1;
 }
 .center{
 	display: block;
@@ -183,6 +185,8 @@ a {
 	height: 2.6rem;
 	width: 2.6rem;
 	vertical-align: text-bottom;
+	@include animation(spin 5s infinite);
+
 	.fixed & {
 
 	}
@@ -300,6 +304,14 @@ $box-width: 40%;
 		width: $box-width-xs;
 		left: -$box-width-xs;
 
+
+		@media screen and (orientation: portrait) {
+			position: static!important;
+			margin: ($trim * 2) auto;
+			@include transform(none);
+		}
+			
+
 		&.right {
 			left: auto;
 			right: -$box-width-xs;
@@ -332,6 +344,7 @@ $box-width: 40%;
 				right: 0;
 			}
 		}
+
 	}
 
 	h2 {
@@ -360,6 +373,8 @@ $box-width: 40%;
 }
 
 #intro {
+	background-image: url(../images/intro.png);
+
 	h1 {
 		font-size: 2.75rem;
 		font-weight: 400;
@@ -380,6 +395,8 @@ $box-width: 40%;
 	background: none;
 	width: 100%;
 	object-fit: cover;
+	z-index: -1;
+
 	@media screen and (orientation: portrait) {
 		width: auto;
 		height: 100%;
@@ -504,7 +521,6 @@ $box-width: 40%;
 			opacity: 0;
 			width: 180%;
 			left: -40%;
-			// background: rgba(darken($c-main, 10%), .8);
 			background: $c-lightbox;
 			color: $c-white;
 			padding: 1em;
@@ -524,7 +540,7 @@ $box-width: 40%;
 			}
 		}
 
-		&.show .tip-info, &:hover .tip-info{
+		&.show-tip .tip-info, &:hover .tip-info{
 			visibility: visible;
 			opacity: 1;
 			top: 100%;
@@ -566,14 +582,15 @@ $box-width: 40%;
 		position: relative;
 
 		&:before{
+			display: block;
 			content: '';
 			position: absolute;
 			width: 12rem;
 			left: 50%;
 			margin-left: - (12rem/2);
-			top: 0;
-			margin-top: -1px;
-			border-top: 1px solid #fff;
+			top: -2px;
+			background: #fff;
+			height: 4px;
 			
 		}
 	}
@@ -588,6 +605,10 @@ $box-width: 40%;
 	.container {
 		width: 700px;
 		max-width: 100%;
+	}
+
+	h3 {
+		text-align: center;
 	}
 
 	input, textarea {
