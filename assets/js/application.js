@@ -22,7 +22,6 @@ $(function(){
 		}
 	});
 
-
 	// variables
 	var $win = $(window), 
 		$scrollTop = 0,
@@ -47,7 +46,6 @@ $(function(){
 		$(this).toggleClass('show-tip');
 		return !1;
 	});
-
 	
 	$(document).on('click', "#menu-toggle", function(e) { // menu toggle
 		e.preventDefault();
@@ -63,8 +61,6 @@ $(function(){
 		});
 	});
 
-
-	
 	$win.on('scroll', function(){ // window scroll event
 
 		$scrollTop = $win.scrollTop();
