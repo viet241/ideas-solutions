@@ -56,9 +56,9 @@ html {
 
 body {
   background: #fff;
+  color: #333;
   font-family: "Open Sans", arial, sans-serif;
   font-weight: 300;
-  color: #333;
   line-height: 1.5;
 }
 
@@ -271,7 +271,8 @@ a:hover, a:focus {
 
 /**==== main ====**/
 .screen {
-  background: gray none 50% 50% no-repeat fixed;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -396,11 +397,11 @@ a:hover, a:focus {
   }
 }
 
-#what-we-do {
+#what-we-do.screen {
   background-image: url("../images/whatwedo.png");
 }
 
-#who-we-are {
+#who-we-are.screen {
   background-image: url("../images/whoweare.png");
 }
 

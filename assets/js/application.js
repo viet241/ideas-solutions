@@ -72,9 +72,9 @@ $(function(){
 		// move background / show sidebox
 		$("#main > section").each(function(){
 			var $screen = $(this),
-			$goOver = $scrollTop - $screen.offset().top,
+			//$goOver = $scrollTop - $screen.offset().top,
 			$box = $screen.find(".box");
-			$screen.css('background-position', $goOver > 0 ? ('50% -' + $goOver / 5 + 'px') : '50% 50%');
+			//$screen.css('background-position', $goOver > 0 ? ('50% -' + $goOver / 5 + 'px') : '50% 50%');
 			if($box.length)
 				$scrollTop + $winHeight >= $box.offset().top ? $box.addClass("show") : $box.removeClass("show");
 		});

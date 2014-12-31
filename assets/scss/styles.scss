@@ -52,6 +52,19 @@ $ani-duration : .4s;
 	}
 }
 
+@function makelongshadow($color) {
+	$val: 0px 0px $color;
+	@for $i from 1 through 200 {
+		$val: #{$val}, #{$i}px #{$i}px #{$color};
+	}
+	@return $val;
+}
+
+@mixin longshadow($color) {
+	text-shadow: makelongshadow($color);
+}
+
+
 /// END variables / Mixins
 
 
@@ -70,9 +83,9 @@ html {
 
 body {
 	background: #fff;
+	color: $c-text;
 	font-family: $f-general;
 	font-weight: 300;
-	color: $c-text;
 	line-height: 1.5;
 }
 
@@ -81,7 +94,6 @@ h1, h2, h3, .h1, .h2, .h3 {
 }
 
 h2, h3, .h2, .h3 {
-
 	font-family: $f-title;
 	font-size: $fz-title-sm;
 
@@ -232,17 +244,13 @@ a {
 		margin: 0;
 		padding: 0;
 
-		li {
-			// some properties 
-
-			a {
-				display: block;
-				padding: 4px $bootstrap-trim;
-				font-size: $fz-l;
-				text-align: right;
-				text-transform: lowercase;
-				border-bottom: 1px solid #ddd;
-			}
+		li a {
+			display: block;
+			padding: 4px $bootstrap-trim;
+			font-size: $fz-l;
+			text-align: right;
+			text-transform: lowercase;
+			border-bottom: 1px solid #ddd;
 		}
 	}
 
@@ -286,7 +294,9 @@ $box-width: 40%;
 
 
 .screen {
-	background: gray none 50% 50% no-repeat fixed;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	//background-attachment: fixed;
 	@include background-size(cover);
 	color: $c-white;
 	position: relative;
@@ -370,6 +380,7 @@ $box-width: 40%;
 	margin-left: auto;
 	margin-right: auto;
 	border-top:1px solid $c-main;
+
 	&.white{
 		border-color: $c-white;
 	}
@@ -411,8 +422,8 @@ $box-width: 40%;
 	
 }
 
-#what-we-do {background-image: url('../images/whatwedo.png')}
-#who-we-are {background-image: url('../images/whoweare.png')}
+#what-we-do.screen {background-image: url('../images/whatwedo.png')}
+#who-we-are.screen {background-image: url('../images/whoweare.png')}
 #our-work .screen {background-image: url('../images/our-work.png')}
 #contact .screen {background-image: url('../images/contact.png')}
 
