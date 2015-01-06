@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Ideas Solutions</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
+	<!-- fonts / bootstrap core / font awesome -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans:300,400,600" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+	<!-- custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css" />
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -145,22 +147,23 @@
 					<p>We would love to hear from you</p>
 				</div>
 			</div>
+			<!-- contact info -->
 			<div class="contact-info container text-center ani-on">
 				<div class="row">
 					<div class="col-sm-4">
-						<a href="javascript:void(0)" class="tip circle">
+						<a href="javascript:void(0)" class="tip">
 							<i class="fa fa-4x fa-map-marker"></i>
 							<span class="tip-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi facilis, nisi vitae!</span>
 						</a>
 					</div>
 					<div class="col-sm-4">
-						<a href="javascript:void(0)" class="tip circle">
+						<a href="javascript:void(0)" class="tip">
 							<i class="fa fa-4x fa-phone"></i>
 							<span class="tip-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut debitis ab.</span>
 						</a>
 					</div>
 					<div class="col-sm-4">
-						<a href="javascript:void(0)" class="tip circle">
+						<a href="javascript:void(0)" class="tip">
 							<i class="fa fa-4x fa-envelope"></i>
 							<span class="tip-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet voluptatum nostrum, quia.</span>
 						</a>
@@ -173,21 +176,22 @@
 					<a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
 				</div>
 			</div>
+			<!-- contact form -->
 			<div class="contact-form ani-on">
 				<div class="container w700">
 					<h3>Quick Contact</h3>
 					<form action="#">
 						<div class="input-box">
 							<label for="name" class="sr-only">Name</label>
-							<input type="name" id="name" name="name" placeholder="Name">
+							<input type="text" id="name" name="name" placeholder="Name" required>
 							<i class="fa fa-2x fa-user"></i>
 						</div>
 						<div class="input-box">
 							<label for="email" class="sr-only">Email</label>
-							<input type="name" id="email" name="email" placeholder="Email">
+							<input type="email" id="email" name="email" placeholder="Email" required>
 							<i class="fa fa-2x fa-envelope"></i>
 						</div>
-						<textarea class="message" name="message" rows="3" placeholder="Message"></textarea>
+						<textarea class="message" name="message" rows="3" placeholder="Message" required></textarea>
 						<div class="text-center actions">
 							<button type="submit" class="btn btn-default">Send</button>
 						</div>
@@ -203,6 +207,7 @@
 			<p class="copyright">Copyright &copy; 2014</p>
 		</div>
 	</footer>
+	
 	<!-- scripts -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.1.min.js"><\/script>');</script>

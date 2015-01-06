@@ -32,16 +32,19 @@ $(function(){
 			'medium': 970,
 			'large': 1170
 		};
-
+    
+    // svgInject
 	$(".svg-inject").svgInject();
-
+    // hide all .box
 	$(".box.show").removeClass("show");
 
+    // video render
 	(!Modernizr.touch || Modernizr.mq("(min-width: "+bp.small+"px)")) && $("#intro").videoRender({
 		'id': 'bg-video',
 		'class': 'overlay'
 	});
 	
+    // touch 2 show tip
 	Modernizr.touch && $(".tip").on('click', function(){
 		$(this).toggleClass('show-tip');
 		return !1;
@@ -72,8 +75,8 @@ $(function(){
 		// move background / show sidebox
 		$("#main > section").each(function(){
 			var $screen = $(this),
-			//$goOver = $scrollTop - $screen.offset().top,
 			$box = $screen.find(".box");
+            //$goOver = $scrollTop - $screen.offset().top;
 			//$screen.css('background-position', $goOver > 0 ? ('50% -' + $goOver / 5 + 'px') : '50% 50%');
 			if($box.length)
 				$scrollTop + $winHeight >= $box.offset().top ? $box.addClass("show") : $box.removeClass("show");

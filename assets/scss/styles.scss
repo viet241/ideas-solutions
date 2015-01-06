@@ -7,7 +7,7 @@ $c-white: #fff;
 $c-main: #03a9f4;
 $c-lightbox: lighten($c-main, 10%);
 
-$c-light: #b3e5fc;
+$c-light: lighten($c-main, 36);
 $c-overlay: rgba($c-main, 0.5);
 $c-border: #ddd;
 
@@ -177,12 +177,6 @@ a {
 		a {
 			color: $c-main;
 		}
-
-		@include bp(max, $bp-small) {
-			.container {
-				background: $c-white;
-			}
-		}
 	}
 }
 
@@ -201,16 +195,13 @@ a {
 	vertical-align: text-bottom;
 	@include animation(spin 5s infinite);
 
-	.fixed & {
-
-	}
-
 	#circle {
-		.fixed & { opacity: 1; }
+		fill: $c-white;
+		.fixed & { fill: transparent; }
 	}
 	#shape {
-		opacity: 0;
-		.fixed & { opacity: 1; }
+		fill: transparent;
+		.fixed & { fill: $c-main; }
 	}
 }
 
@@ -253,6 +244,12 @@ a {
 			border-bottom: 1px solid #ddd;
 		}
 	}
+    
+    @include bp(max, $bp-small) {
+        .fixed &{
+            background: $c-white;
+        }
+	}
 
 	@include bp(min, $bp-small){
 		display: block!important;
@@ -292,7 +289,6 @@ $box-width-xs: 80%;
 $box-width-sm: 60%;
 $box-width: 40%;
 
-
 .screen {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -317,13 +313,12 @@ $box-width: 40%;
 		width: $box-width-xs;
 		left: -$box-width-xs;
 
-
 		@media screen and (orientation: portrait) {
 			position: static!important;
 			margin: ($trim * 2) auto;
 			@include transform(none);
 		}
-			
+
 
 		&.right {
 			left: auto;
@@ -352,6 +347,7 @@ $box-width: 40%;
 
 		&.show {
 			left: 0;
+            
 			&.right{
 				left: auto;
 				right: 0;
@@ -411,15 +407,9 @@ $box-width: 40%;
 #bg-video {
 	background: none;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	object-fit: cover;
-	z-index: 0;
-
-	@media screen and (orientation: portrait) {
-		width: auto;
-		height: 100%;
-	}
-	
+	z-index: 0;	
 }
 
 #what-we-do.screen {background-image: url('../images/whatwedo.png')}
@@ -427,6 +417,7 @@ $box-width: 40%;
 #our-work .screen {background-image: url('../images/our-work.png')}
 #contact .screen {background-image: url('../images/contact.png')}
 
+/* featured projects */
 .featured-pj {
 	text-align: center;
 	padding-top: 4rem;
@@ -442,7 +433,7 @@ $box-width: 40%;
 		max-width: 100%;
 	}
 }
-
+/* grid view items */
 .pj-items{
 
 	article {
@@ -508,11 +499,13 @@ $box-width: 40%;
 	}
 }
 
+/* contact */
 .contact-info{
 	margin-top: 4rem;
 	margin-bottom: 4rem;
 
 	.tip {
+        @extend .circle;
 		background: $c-main;
 		color: $c-white;
 		display: inline-block;
@@ -521,15 +514,7 @@ $box-width: 40%;
 		position: relative;
 		text-align: center;
 
-
-		i {
-			@extend .middle;
-		}
-
-		&.show-tip i:before, &:hover i:before {
-			@include transform(rotate(360deg)); 
-		}
-
+		i { @extend .middle; }
 
 		.tip-info {
 			position: absolute;
@@ -557,7 +542,11 @@ $box-width: 40%;
 				border-right: 10px solid transparent;
 			}
 		}
-
+        
+		&.show-tip i:before, &:hover i:before {
+			@include transform(rotate(360deg)); 
+		}
+        
 		&.show-tip .tip-info, &:hover .tip-info{
 			visibility: visible;
 			opacity: 1;
@@ -653,6 +642,12 @@ $box-width: 40%;
 				color: transparent;
 			}
 		}
+        
+        // webkit yellow background fix
+        &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 999px $c-main inset;
+            -webkit-text-fill-color: $c-white;
+        }
 	}
 
 	.message {
@@ -691,6 +686,8 @@ $box-width: 40%;
 		}
 	}
 }
+
+/**==== footer ====**/
 
 #footer {
 	background: darken($c-main, 20%);

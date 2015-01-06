@@ -135,7 +135,7 @@ a:hover, a:focus {
   text-align: center;
 }
 
-.circle {
+.circle, .contact-info .tip {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -155,7 +155,7 @@ a:hover, a:focus {
   z-index: 999;
 }
 #header a {
-  color: #b3e5fc;
+  color: #b1e6fe;
 }
 #header.fixed {
   background: #fff;
@@ -168,11 +168,6 @@ a:hover, a:focus {
 }
 #header.fixed a {
   color: #03a9f4;
-}
-@media screen and (max-width: 768px) {
-  #header.fixed .container {
-    background: #fff;
-  }
 }
 
 #brand {
@@ -192,14 +187,17 @@ a:hover, a:focus {
   -webkit-animation: spin 5s infinite;
   animation: spin 5s infinite;
 }
+#logo #circle {
+  fill: #fff;
+}
 .fixed #logo #circle {
-  opacity: 1;
+  fill: transparent;
 }
 #logo #shape {
-  opacity: 0;
+  fill: transparent;
 }
 .fixed #logo #shape {
-  opacity: 1;
+  fill: #03a9f4;
 }
 
 #menu-toggle {
@@ -240,6 +238,11 @@ a:hover, a:focus {
   text-align: right;
   text-transform: lowercase;
   border-bottom: 1px solid #ddd;
+}
+@media screen and (max-width: 768px) {
+  .fixed #nav {
+    background: #fff;
+  }
 }
 @media screen and (min-width: 768px) {
   #nav {
@@ -386,15 +389,9 @@ a:hover, a:focus {
 #bg-video {
   background: none;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
-}
-@media screen and (orientation: portrait) {
-  #bg-video {
-    width: auto;
-    height: 100%;
-  }
 }
 
 #what-we-do.screen {
@@ -413,6 +410,7 @@ a:hover, a:focus {
   background-image: url("../images/contact.png");
 }
 
+/* featured projects */
 .featured-pj {
   text-align: center;
   padding-top: 4rem;
@@ -427,6 +425,7 @@ a:hover, a:focus {
   max-width: 100%;
 }
 
+/* grid view items */
 .pj-items article {
   margin-bottom: 2rem;
   position: relative;
@@ -481,6 +480,7 @@ a:hover, a:focus {
   }
 }
 
+/* contact */
 .contact-info {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -494,12 +494,6 @@ a:hover, a:focus {
   position: relative;
   text-align: center;
   margin-top: 3rem;
-}
-.contact-info .tip.show-tip i:before, .contact-info .tip:hover i:before {
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
 }
 .contact-info .tip .tip-info {
   position: absolute;
@@ -527,6 +521,12 @@ a:hover, a:focus {
   border-bottom: 10px solid #2ebcfc;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
+}
+.contact-info .tip.show-tip i:before, .contact-info .tip:hover i:before {
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 .contact-info .tip.show-tip .tip-info, .contact-info .tip:hover .tip-info {
   visibility: visible;
@@ -614,7 +614,7 @@ a:hover, a:focus {
   padding-left: 2rem;
   border: 0;
   outline: 0;
-  border-bottom: 1px dashed #b3e5fc;
+  border-bottom: 1px dashed #b1e6fe;
 }
 .contact-form input:-moz-placeholder, .contact-form textarea:-moz-placeholder {
   color: #fff;
@@ -640,9 +640,13 @@ a:hover, a:focus {
 .contact-form input:focus::-webkit-input-placeholder, .contact-form textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
+.contact-form input:-webkit-autofill, .contact-form textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 999px #03a9f4 inset;
+  -webkit-text-fill-color: #fff;
+}
 .contact-form .message {
   margin-top: 1.4em;
-  border: 1px dashed #b3e5fc;
+  border: 1px dashed #b1e6fe;
   background: #2ebcfc;
   padding-right: 2rem;
   padding-top: .8rem;
@@ -663,13 +667,14 @@ a:hover, a:focus {
 }
 .contact-form .actions .btn {
   background: none;
-  border: 1px dashed #b3e5fc;
+  border: 1px dashed #b1e6fe;
   color: #fff;
 }
 .contact-form .actions .btn:hover {
   background: #2ebcfc;
 }
 
+/**==== footer ====**/
 #footer {
   background: #02638f;
   color: #60ccfd;
