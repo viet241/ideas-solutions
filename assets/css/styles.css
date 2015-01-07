@@ -162,9 +162,9 @@ a:hover, a:focus {
   border-bottom: 1px solid #03a9f4;
   height: 3rem;
   position: fixed;
-  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
 }
 #header.fixed a {
   color: #03a9f4;

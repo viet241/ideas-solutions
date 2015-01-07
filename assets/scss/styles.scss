@@ -69,10 +69,6 @@ $ani-duration : .4s;
 
 
 
-
-
-
-
 // BEGIN STYLES 
 
 @include selection($c-main, $c-white);
@@ -172,7 +168,7 @@ a {
 		border-bottom: 1px solid $c-main;
 		height: 3rem;
 		position: fixed;
-		@include box-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+		@include box-shadow(0 0 $trim rgba(0, 0, 0, 0.3));
 	
 		a {
 			color: $c-main;
@@ -285,6 +281,7 @@ a {
 }
 
 /**==== main ====**/
+
 $box-width-xs: 80%;
 $box-width-sm: 60%;
 $box-width: 40%;
@@ -292,7 +289,6 @@ $box-width: 40%;
 .screen {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
-	//background-attachment: fixed;
 	@include background-size(cover);
 	color: $c-white;
 	position: relative;
@@ -455,7 +451,7 @@ $box-width: 40%;
 			color: $c-white;
 			text-decoration: none;
 
-			.no-touch & {
+			.no-touch & { // hide overlay info in no-touch device
 				opacity: 0;
 				&:hover{
 					opacity: 1;
@@ -551,7 +547,7 @@ $box-width: 40%;
 			visibility: visible;
 			opacity: 1;
 			top: 100%;
-			@include transition-delay($ani-duration);
+			@include transition-delay($ani-duration); // show tooltip after rotate animation
 		}
 
 		& + .tip {
