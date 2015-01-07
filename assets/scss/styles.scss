@@ -53,7 +53,7 @@ $ani-duration : .4s;
 }
 
 @function makelongshadow($color) {
-	$val: 0px 0px $color;
+	$val: 0 0 $color;
 	@for $i from 1 through 200 {
 		$val: #{$val}, #{$i}px #{$i}px #{$color};
 	}
@@ -321,7 +321,7 @@ $box-width: 40%;
 			right: -$box-width-xs;
 		}
 
-		@include bp(min, $bp-small) {
+		@include bp(min, $bp-small) { // box size sm
 			width: $box-width-sm;
 			left: -$box-width-sm;
 
@@ -331,7 +331,7 @@ $box-width: 40%;
 			}
 		}
 
-		@include bp(min, $bp-medium) {
+		@include bp(min, $bp-medium) { // box size md
 			width: $box-width;
 			left: -$box-width;
 
@@ -400,6 +400,7 @@ $box-width: 40%;
 	}
 
 }
+
 #bg-video {
 	background: none;
 	width: 100%;
@@ -512,6 +513,7 @@ $box-width: 40%;
 
 		i { @extend .middle; }
 
+        $arrow-size: 10px;
 		.tip-info {
 			position: absolute;
 			z-index: 2;
@@ -523,7 +525,7 @@ $box-width: 40%;
 			background: $c-lightbox;
 			color: $c-white;
 			padding: 1em;
-			margin-top: 10px;
+			margin-top: $arrow-size;
 			@include box-shadow(0 0 10px rgba(255, 255, 255, .6));
 
 			&:before {
@@ -532,10 +534,10 @@ $box-width: 40%;
 				position: absolute;
 				bottom: 100%;
 				left: 50%;
-				margin-left: -10px;
-				border-bottom: 10px solid $c-lightbox;
-				border-left: 10px solid transparent;
-				border-right: 10px solid transparent;
+				margin-left: -$arrow-size;
+				border-bottom: $arrow-size solid $c-lightbox;
+				border-left: $arrow-size solid transparent;
+				border-right: $arrow-size solid transparent;
 			}
 		}
         

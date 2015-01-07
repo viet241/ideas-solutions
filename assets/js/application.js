@@ -2,11 +2,11 @@ $(function(){
 	"use strict";
 
 	$.fn.extend({
-		scrollTo : function(speed, easing, callback) {
+		scrollTo : function(speed, easing, callback) { // smooth scroll
 			var anchor = $(this).length ? $(this).offset().top : 0;
 			$('html,body').stop().animate({'scrollTop': anchor}, speed || 0, easing, callback);
 		},
-		videoRender: function (attrs){
+		videoRender: function (attrs){ // video render
 			var def = {
 				'loop': true,
 				'autoplay': true,
