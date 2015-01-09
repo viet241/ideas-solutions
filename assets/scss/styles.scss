@@ -101,7 +101,7 @@ h2, h3, .h2, .h3 {
 a {
 	color: $c-main;
 	text-decoration: none;
-	&:hover, &:focus {
+    &:hover, &:focus {
 		text-decoration: none;
 	}
 }
@@ -143,7 +143,7 @@ a {
 .text-center {
 	text-align: center;
 }
-.circle {
+%circle {
 	@include border-radius(50%);
 }
 .p1px {
@@ -296,7 +296,7 @@ $box-width: 40%;
 	overflow: hidden;
 	@include transform-style(preserve-3d);
 
-	&.half{
+	&.half {
 		min-height: 300px;
 	}
 
@@ -500,7 +500,7 @@ $box-width: 40%;
 	margin-bottom: 4rem;
 
 	.tip {
-        @extend .circle;
+        @extend %circle;
 		background: $c-main;
 		color: $c-white;
 		display: inline-block;
