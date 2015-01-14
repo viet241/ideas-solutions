@@ -1,5 +1,7 @@
-Ideas & Solutions website
+Ideas & Solutions static website
 ========================
 
 Designed by NNBPhien
+
 ![design](https://raw.githubusercontent.com/viet241/ideas-solutions/master/final.png)
+
