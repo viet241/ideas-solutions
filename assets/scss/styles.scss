@@ -5,7 +5,7 @@
 $c-text: #333;
 $c-white: #fff;
 $c-main: #03a9f4;
-$c-lightbox: lighten($c-main, 10%);
+$c-lightbox: lighten($c-main, 10);
 
 $c-light: lighten($c-main, 36);
 $c-overlay: rgba($c-main, 0.5);
@@ -64,6 +64,21 @@ $ani-duration : .4s;
 	text-shadow: makelongshadow($color);
 }
 
+%overlay {
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background: $c-overlay;
+	display: block;
+	z-index: 1;
+}
+
+%circle {
+	@include border-radius(50%);
+}
+
 
 /// END variables / Mixins
 
@@ -114,17 +129,17 @@ a {
 }
 
 .overlay{
-	@extend %coverer;
-	background: $c-overlay;
-	display: block;
-	z-index: 1;
+	@extend %overlay;
+    clear: none;
 }
+
 .center{
 	display: block;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .middle{
 	display: block;
 	position: relative;
@@ -140,12 +155,11 @@ a {
 		@include transform(translate(-50%, -50%));
 	}
 }
+
 .text-center {
 	text-align: center;
 }
-%circle {
-	@include border-radius(50%);
-}
+
 .p1px {
 	padding-top: 1px;
 }
@@ -446,7 +460,7 @@ $box-width: 40%;
 			
 		a {
 			padding: 0 2em; 
-			@extend .overlay;
+			@extend %overlay;
 			color: $c-white;
 			text-decoration: none;
 
