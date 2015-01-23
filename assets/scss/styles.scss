@@ -64,21 +64,6 @@ $ani-duration : .4s;
 	text-shadow: makelongshadow($color);
 }
 
-%overlay {
-	position: absolute;
-	top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-	background: $c-overlay;
-	display: block;
-	z-index: 1;
-}
-
-%circle {
-	@include border-radius(50%);
-}
-
 
 /// END variables / Mixins
 
@@ -121,36 +106,51 @@ a {
 	}
 }
 
+%overlay {
+	position: absolute;
+	top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background: $c-overlay;
+	display: block;
+	z-index: 1;
+}
+
+%circle {
+	@include border-radius(50%);
+}
+
 .ani-on, .ani-on *, .ani-on *:before, .ani-on *:after {
 	@include transition(all $ani-duration ease);
 }
-.ani-off{
+.ani-off {
 	@include transition-duration(0s);
 }
 
-.overlay{
+.overlay {
 	@extend %overlay;
     clear: none;
 }
 
-.center{
+.center {
 	display: block;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.middle{
+.middle {
 	display: block;
 	position: relative;
 	top: 50%;
 	@include transform(translateY(-50%));
 
-	.screen &{
+	.screen & {
 		position: absolute;
 	}
 
-	&.center{
+	&.center {
 		left: 50%;
 		@include transform(translate(-50%, -50%));
 	}
@@ -177,7 +177,7 @@ a {
 
 	a {color: $c-light;}
 
-	&.fixed{
+	&.fixed {
 		background: $c-white;
 		border-bottom: 1px solid $c-main;
 		height: 3rem;
@@ -223,11 +223,11 @@ a {
 		line-height: 2.6rem;
 	}
 
-	&.active i{
+	&.active i {
 		@include transform(rotate(-90deg));
 	}
 
-	@include bp(min, $bp-small){
+	@include bp(min, $bp-small) {
 		display: none;
 	}
 }
@@ -239,7 +239,7 @@ a {
 	line-height: 2.2rem;
 	margin: 0 -$bootstrap-trim;
 
-	& > ul{
+	& > ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -255,12 +255,12 @@ a {
 	}
     
     @include bp(max, $bp-small) {
-        .fixed &{
+        .fixed & {
             background: $c-white;
         }
 	}
 
-	@include bp(min, $bp-small){
+	@include bp(min, $bp-small) {
 		display: block!important;
 		clear: none;
 		float: right;
@@ -271,7 +271,7 @@ a {
 			float: left;
 			margin-left: 2rem;
 
-			&:first-child{
+			&:first-child {
 				margin-left: 0;
 			}
 
@@ -280,14 +280,14 @@ a {
 				border-top: 1px solid transparent;
 				border-bottom: 1px solid transparent;
 
-				&:hover{
+				&:hover {
 					border-color: currentColor;
 				}
 
 			}
 		}
 
-		.fixed &{
+		.fixed & {
 			margin-top: .5rem;
 		}
 	}
@@ -356,7 +356,7 @@ $box-width: 40%;
 		&.show {
 			left: 0;
             
-			&.right{
+			&.right {
 				left: auto;
 				right: 0;
 			}
@@ -384,7 +384,7 @@ $box-width: 40%;
 	margin-right: auto;
 	border-top:1px solid $c-main;
 
-	&.white{
+	&.white {
 		border-color: $c-white;
 	}
 }
@@ -399,14 +399,14 @@ $box-width: 40%;
 	p {font-size: 1.5rem}
 	
 	@include bp(min, $bp-small) {
-		h1{white-space: nowrap;}
+		h1 {white-space: nowrap;}
 	}
 
 	@include bp(min, $bp-medium) {
 		h1 {font-size: 3.75rem;}
 	}
 
-	.center{
+	.center {
 		z-index: 2;
 	}
 
@@ -443,7 +443,7 @@ $box-width: 40%;
 }
 
 /* grid view items */
-.pj-items{
+.pj-items {
 
 	article {
 		margin-bottom: $trim;
@@ -457,7 +457,7 @@ $box-width: 40%;
 			text-transform: uppercase;
 			font-size: $fz-xl;
 		}
-			
+
 		a {
 			padding: 0 2em; 
 			@extend %overlay;
@@ -466,7 +466,7 @@ $box-width: 40%;
 
 			.no-touch & { // hide overlay info in no-touch device
 				opacity: 0;
-				&:hover{
+				&:hover {
 					opacity: 1;
 				}
 			}
@@ -484,7 +484,7 @@ $box-width: 40%;
 			margin: 0 0 2% 2%;
 			float: left;
 
-			&:nth-child(2n + 1){
+			&:nth-child(2n + 1) {
 				clear: both;
 				margin-left: 0;
 			}
@@ -495,12 +495,12 @@ $box-width: 40%;
 			width: 32.33333%;
 			margin: 0 0 1.5% 1.5%;
 
-			&:nth-child(2n + 1){
+			&:nth-child(2n + 1) {
 				clear: none;
 				margin-left: 1.5%;
 			}
 
-			&:nth-child(3n + 1){
+			&:nth-child(3n + 1) {
 				clear: both;
 				margin-left: 0;
 			}
@@ -509,7 +509,7 @@ $box-width: 40%;
 }
 
 /* contact */
-.contact-info{
+.contact-info {
 	margin-top: 4rem;
 	margin-bottom: 4rem;
 
@@ -552,12 +552,12 @@ $box-width: 40%;
 				border-right: $arrow-size solid transparent;
 			}
 		}
-        
+
 		&.show-tip i:before, &:hover i:before {
 			@include transform(rotate(360deg)); 
 		}
-        
-		&.show-tip .tip-info, &:hover .tip-info{
+
+		&.show-tip .tip-info, &:hover .tip-info {
 			visibility: visible;
 			opacity: 1;
 			top: 100%;
@@ -572,12 +572,13 @@ $box-width: 40%;
 	}
 	
 	@include bp(min, $bp-small) {
-		.tip {margin-top: 0;}
-		.col-sm-4:first-child {text-align: right; }
-		.col-sm-4:last-child {text-align: left; }
-	}	
+		.tip { margin-top: 0; }
+		.col-sm-4:first-child { text-align: right; }
+		.col-sm-4:last-child { text-align: left; }
+	}
 
 }
+
 .social-links {
 	margin-top: 6rem;
 
@@ -593,16 +594,16 @@ $box-width: 40%;
 		}
 	}
 
-	.fa-twitter-square {color: #00aced; }
-	.fa-rss-square {color: #f60; }
-	.fa-facebook-square {color: #3b5998; }
+	.fa-twitter-square {color: #00aced; } /* twitter color */
+	.fa-rss-square {color: #f60; } /* rss color */
+	.fa-facebook-square {color: #3b5998; } /* facebook color */
 
 	.line {
 		width: 50%;
 		margin-bottom: -1.25rem;
 		position: relative;
 
-		&:before{
+		&:before {
 			display: block;
 			content: '';
 			position: absolute;
@@ -691,7 +692,7 @@ $box-width: 40%;
 			border: 1px dashed $c-light;
 			color: $c-white;
 
-			&:hover{
+			&:hover {
 				background: $c-lightbox;
 			}
 		}
