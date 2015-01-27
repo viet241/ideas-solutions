@@ -209,6 +209,7 @@ a {
 		fill: $c-white;
 		.fixed & { fill: transparent; }
 	}
+
 	#shape {
 		fill: transparent;
 		.fixed & { fill: $c-main; }

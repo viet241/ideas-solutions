@@ -9,6 +9,8 @@ line_comments = false
 sourcemap = true
 #output_style = :compressed
 #output_style = :expanded
-output_style = :compact
+#output_style = :compact
+output_style = :nested
+
 environment = :production
-# preferred_syntax = :scss
+# preferred_syntax = :sass
