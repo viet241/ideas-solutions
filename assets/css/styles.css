@@ -2,14 +2,44 @@
   0% {
     -moz-transform: rotate(0deg);
     transform: rotate(0deg); }
-  10%, 100% {
+  10% {
+    -moz-transform: rotate(405deg);
+    transform: rotate(405deg); }
+  15% {
+    -moz-transform: rotate(330deg);
+    transform: rotate(330deg); }
+  20% {
+    -moz-transform: rotate(380deg);
+    transform: rotate(380deg); }
+  25% {
+    -moz-transform: rotate(345deg);
+    transform: rotate(345deg); }
+  30% {
+    -moz-transform: rotate(370deg);
+    transform: rotate(370deg); }
+  35%, 100% {
     -moz-transform: rotate(360deg);
     transform: rotate(360deg); } }
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
-  10%, 100% {
+  10% {
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg); }
+  15% {
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg); }
+  20% {
+    -webkit-transform: rotate(380deg);
+    transform: rotate(380deg); }
+  25% {
+    -webkit-transform: rotate(345deg);
+    transform: rotate(345deg); }
+  30% {
+    -webkit-transform: rotate(370deg);
+    transform: rotate(370deg); }
+  35%, 100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 @keyframes spin {
@@ -18,7 +48,32 @@
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
-  10%, 100% {
+  10% {
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg); }
+  15% {
+    -moz-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg); }
+  20% {
+    -moz-transform: rotate(380deg);
+    -ms-transform: rotate(380deg);
+    -webkit-transform: rotate(380deg);
+    transform: rotate(380deg); }
+  25% {
+    -moz-transform: rotate(345deg);
+    -ms-transform: rotate(345deg);
+    -webkit-transform: rotate(345deg);
+    transform: rotate(345deg); }
+  30% {
+    -moz-transform: rotate(370deg);
+    -ms-transform: rotate(370deg);
+    -webkit-transform: rotate(370deg);
+    transform: rotate(370deg); }
+  35%, 100% {
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
@@ -311,16 +366,16 @@ a {
   z-index: 0; }
 
 #what-we-do.screen {
-  background-image: url("../images/whatwedo.png"); }
+  background-image: url('../images/whatwedo.png?1421656071'); }
 
 #who-we-are.screen {
-  background-image: url("../images/whoweare.png"); }
+  background-image: url('../images/whoweare.png?1421656071'); }
 
 #our-work .screen {
-  background-image: url("../images/our-work.png"); }
+  background-image: url('../images/our-work.png?1421656071'); }
 
 #contact .screen {
-  background-image: url("../images/contact.png"); }
+  background-image: url('../images/contact.png?1421656071'); }
 
 /* featured projects */
 .featured-pj {

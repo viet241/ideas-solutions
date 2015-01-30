@@ -38,9 +38,19 @@ $fz-title-sm: 1.875rem;
 //animation
 $ani-duration : .4s;
 
+//@include keyframes(spin) { // spin
+//	0% { @include transform(rotate(0deg)); }
+//	10%, 100% { @include transform(rotate(360deg)); }
+//}
+
 @include keyframes(spin) { // spin
 	0% { @include transform(rotate(0deg)); }
-	10%, 100% { @include transform(rotate(360deg)); }
+    10% { @include transform(rotate(360deg + 45deg)); }
+    15% { @include transform(rotate(360deg - 30deg)); }
+    20% { @include transform(rotate(360deg + 20deg)); }
+    25% { @include transform(rotate(360deg - 15deg)); }
+    30% { @include transform(rotate(360deg + 10deg)); }
+	35%, 100% { @include transform(rotate(360deg)); }
 }
 
 @mixin selection($bg, $color) {
@@ -421,10 +431,10 @@ $box-width: 40%;
 	z-index: 0;	
 }
 
-#what-we-do.screen {background-image: url('../images/whatwedo.png')}
-#who-we-are.screen {background-image: url('../images/whoweare.png')}
-#our-work .screen {background-image: url('../images/our-work.png')}
-#contact .screen {background-image: url('../images/contact.png')}
+#what-we-do.screen {background-image: image-url("whatwedo.png")}
+#who-we-are.screen {background-image: image-url("whoweare.png")}
+#our-work .screen {background-image: image-url("our-work.png")}
+#contact .screen {background-image: image-url("contact.png")}
 
 /* featured projects */
 .featured-pj {
